@@ -31,11 +31,39 @@ export function buildLoaders(
         ],
     };
 
+    const assetLoader = {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+    };
+
     const tsLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
     };
 
-    return [scssLoader, tsLoader];
+    const svgLoader = {
+        test: /\.svg$/,
+        issuer: /\.[jt]sx?$/,
+        use: [
+            {
+                loader: '@svgr/webpack',
+                options: {
+                    icon: true,
+                    svgoConfig: {
+                        plugins: [
+                            {
+                                name: 'convertColors',
+                                params: {
+                                    currentColor: true,
+                                },
+                            },
+                        ],
+                    },
+                },
+            },
+        ],
+    };
+
+    return [assetLoader, scssLoader, tsLoader, svgLoader];
 }

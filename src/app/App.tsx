@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import classes from './App.module.scss';
 import { Link, Outlet } from 'react-router-dom';
+import AvatarPng from '@/assets/icons8-avatar-100.png';
+import AvatarJpg from '@/assets/avatar.jpg';
+import AvatarSvg from '@/assets/reshot-icon-avatar-E7JU2GQ3FT.svg';
 
 export const App = () => {
     const [count, setCount] = useState(0);
@@ -12,6 +15,20 @@ export const App = () => {
             <Link to={'/about'}>about</Link>
             <br />
             <Link to={'/shop'}>shop</Link>
+            <div>
+                <img width={100} height={100} src={AvatarPng} />
+            </div>
+            <div>
+                <img width={100} height={100} src={AvatarJpg} />
+            </div>
+            <div>
+                <AvatarSvg
+                    style={{ color: 'green' }}
+                    color="red"
+                    width={100}
+                    height={100}
+                />
+            </div>
             <h1 className={classes.value}>{count}</h1>
             <button className={classes.button} onClick={increment}>
                 Inc
