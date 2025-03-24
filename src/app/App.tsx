@@ -15,20 +15,7 @@ export const App = () => {
             <Link to={'/about'}>about</Link>
             <br />
             <Link to={'/shop'}>shop</Link>
-            <div>
-                <img width={100} height={100} src={AvatarPng} />
-            </div>
-            <div>
-                <img width={100} height={100} src={AvatarJpg} />
-            </div>
-            <div>
-                <AvatarSvg
-                    style={{ color: 'green' }}
-                    color="red"
-                    width={100}
-                    height={100}
-                />
-            </div>
+            <h1>PLATFORM={__PLATFORM__}</h1>
             <h1 className={classes.value}>{count}</h1>
             <button className={classes.button} onClick={increment}>
                 Inc
