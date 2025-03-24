@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import classes from './App.module.scss';
 import { Link, Outlet } from 'react-router-dom';
-import AvatarPng from '@/assets/icons8-avatar-100.png';
-import AvatarJpg from '@/assets/avatar.jpg';
-import AvatarSvg from '@/assets/reshot-icon-avatar-E7JU2GQ3FT.svg';
 
 export const App = () => {
     const [count, setCount] = useState(0);
