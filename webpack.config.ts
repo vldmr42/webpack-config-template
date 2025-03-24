@@ -1,7 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 import { buildWebpack } from './config/build/buildWebpack';
 import { BuildMode, BuildPaths } from './config/build/types/types';
@@ -9,6 +7,7 @@ import { BuildMode, BuildPaths } from './config/build/types/types';
 interface EnvVariables {
     mode: BuildMode;
     port: number;
+    analyzer?: boolean;
 }
 
 export default (env: EnvVariables) => {
@@ -22,6 +21,7 @@ export default (env: EnvVariables) => {
         port: env.port ?? 3000,
         mode: env.mode ?? 'development',
         paths: paths,
+        analyzer: env.analyzer,
     });
 
     return config;
