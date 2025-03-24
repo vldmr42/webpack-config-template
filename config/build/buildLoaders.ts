@@ -38,7 +38,14 @@ export function buildLoaders(
 
     const tsLoader = {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: [
+            {
+                loader: 'ts-loader',
+                options: {
+                    transpileOnly: isDev,
+                },
+            },
+        ],
         exclude: /node_modules/,
     };
 
