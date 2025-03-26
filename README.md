@@ -36,7 +36,7 @@
 1. **Клонировать репозиторий:**
 
     ```bash
-    git clone https://github.com/ваш-репозиторий.git
+    git clone https://github.com/vldmr42/webpack-config-template.git
     cd ваш-проект
     ```
 
