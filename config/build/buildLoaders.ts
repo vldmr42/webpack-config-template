@@ -1,21 +1,21 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { ModuleOptions } from 'webpack';
-import ReactRefreshTypeScript from 'react-refresh-typescript';
-import { BuildOptions } from './types/types';
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { ModuleOptions } from "webpack";
+
+import { BuildOptions } from "./types/types";
 
 export function buildLoaders(
     buildOptions: BuildOptions
-): ModuleOptions['rules'] {
-    const isDev = buildOptions.mode === 'development';
+): ModuleOptions["rules"] {
+    const isDev = buildOptions.mode === "development";
 
     const cssModuleLoader = {
-        loader: 'css-loader',
+        loader: "css-loader",
         options: {
             modules: {
                 namedExport: false,
                 localIdentName: isDev
-                    ? '[path][name]__[local]--[hash:base64:5]'
-                    : '[hash:base64:8]',
+                    ? "[path][name]__[local]--[hash:base64:5]"
+                    : "[hash:base64:8]",
             },
         },
     };
@@ -24,17 +24,17 @@ export function buildLoaders(
         test: /\.s[ac]ss$/i,
         use: [
             // Creates `style` nodes from JS strings
-            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+            isDev ? "style-loader" : MiniCssExtractPlugin.loader,
             cssModuleLoader,
             // Translates CSS into CommonJS
             // Compiles Sass to CSS
-            'sass-loader',
+            "sass-loader",
         ],
     };
 
     const assetLoader = {
         test: /\.(png|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
     };
 
     // TS LOADER CONFIG IN CASE PROBLEMS WITH SWC
@@ -61,12 +61,12 @@ export function buildLoaders(
         exclude: /(node_modules)/,
         use: {
             // `.swcrc` can be used to configure swc
-            loader: 'swc-loader',
+            loader: "swc-loader",
             options: {
                 jsc: {
                     transform: {
                         react: {
-                            runtime: 'automatic',
+                            runtime: "automatic",
                             development: isDev,
                             refresh: isDev,
                         },
@@ -81,13 +81,13 @@ export function buildLoaders(
         issuer: /\.[jt]sx?$/,
         use: [
             {
-                loader: '@svgr/webpack',
+                loader: "@svgr/webpack",
                 options: {
                     icon: true,
                     svgoConfig: {
                         plugins: [
                             {
-                                name: 'convertColors',
+                                name: "convertColors",
                                 params: {
                                     currentColor: true,
                                 },

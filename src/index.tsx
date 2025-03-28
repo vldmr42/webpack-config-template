@@ -1,9 +1,10 @@
+import { Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Route,Routes } from 'react-router-dom';
+
 import { App } from '@/app/App';
 import { LazyAbout } from '@/pages/about/About.lazy';
 import { LazyShop } from '@/pages/shop/Shop.lazy';
-import { Suspense } from 'react';
 
 const root = document.getElementById('root');
 
