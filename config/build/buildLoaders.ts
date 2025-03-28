@@ -37,22 +37,43 @@ export function buildLoaders(
         type: 'asset/resource',
     };
 
-    const tsLoader = {
-        test: /\.tsx?$/,
-        use: [
-            {
-                loader: 'ts-loader',
-                options: {
-                    getCustomTransformers: () => ({
-                        before: [isDev && ReactRefreshTypeScript()].filter(
-                            Boolean
-                        ),
-                    }),
-                    transpileOnly: isDev,
+    // TS LOADER CONFIG IN CASE PROBLEMS WITH SWC
+    // const tsLoader = {
+    //     test: /\.tsx?$/,
+    //     use: [
+    //         {
+    //             loader: 'ts-loader',
+    //             options: {
+    //                 getCustomTransformers: () => ({
+    //                     before: [isDev && ReactRefreshTypeScript()].filter(
+    //                         Boolean
+    //                     ),
+    //                 }),
+    //                 transpileOnly: isDev,
+    //             },
+    //         },
+    //     ],
+    //     exclude: /node_modules/,
+    // };
+
+    const swcLoader = {
+        test: /\.[jt]sx?$/,
+        exclude: /(node_modules)/,
+        use: {
+            // `.swcrc` can be used to configure swc
+            loader: 'swc-loader',
+            options: {
+                jsc: {
+                    transform: {
+                        react: {
+                            runtime: 'automatic',
+                            development: isDev,
+                            refresh: isDev,
+                        },
+                    },
                 },
             },
-        ],
-        exclude: /node_modules/,
+        },
     };
 
     const svgLoader = {
@@ -78,5 +99,5 @@ export function buildLoaders(
         ],
     };
 
-    return [assetLoader, scssLoader, tsLoader, svgLoader];
+    return [assetLoader, scssLoader, swcLoader, svgLoader];
 }
