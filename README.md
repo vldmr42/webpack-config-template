@@ -16,6 +16,7 @@
 
 ### 🔌 **Плагины и лоадеры Webpack**
 
+-   **`swc-loader`** – Компиляция JavaScript / TypeScript
 -   **`sass-loader`** + **`css-loader`** – работа с SCSS/CSS
 -   **`style-loader`** / **`MiniCssExtractPlugin`** – инлайнинг или извлечение CSS в отдельные файлы
 -   **`html-webpack-plugin`** – генерация HTML
@@ -37,7 +38,7 @@
 
     ```bash
     git clone https://github.com/vldmr42/webpack-config-template.git
-    cd ваш-проект
+    cd webpack-config-template
     ```
 
 2. **Установить зависимости:**
