@@ -9,26 +9,26 @@
 
 ### 📦 **Основной стек**
 
--   **React 19** (с поддержкой Concurrent Mode)
--   **TypeScript** (строгая типизация)
--   **Webpack 5** (сборка с tree-shaking и code splitting)
--   **SCSS** + **CSS Modules** (стилизация)
+- **React 19** (с поддержкой Concurrent Mode)
+- **TypeScript** (строгая типизация)
+- **Webpack 5** (сборка с tree-shaking и code splitting)
+- **SCSS** + **CSS Modules** (стилизация)
 
 ### 🔌 **Плагины и лоадеры Webpack**
 
--   **`swc-loader`** – Компиляция JavaScript / TypeScript
--   **`sass-loader`** + **`css-loader`** – работа с SCSS/CSS
--   **`style-loader`** / **`MiniCssExtractPlugin`** – инлайнинг или извлечение CSS в отдельные файлы
--   **`html-webpack-plugin`** – генерация HTML
--   **`webpack-bundle-analyzer`** – визуализация бандла
--   **`fork-ts-checker-webpack-plugin`** – проверка TypeScript в отдельном процессе
+- **`swc-loader`** – Компиляция JavaScript / TypeScript
+- **`sass-loader`** + **`css-loader`** – работа с SCSS/CSS
+- **`style-loader`** / **`MiniCssExtractPlugin`** – инлайнинг или извлечение CSS в отдельные файлы
+- **`html-webpack-plugin`** – генерация HTML
+- **`webpack-bundle-analyzer`** – визуализация бандла
+- **`fork-ts-checker-webpack-plugin`** – проверка TypeScript в отдельном процессе
 
 ### 🛠 **Дополнительные инструменты**
 
--   **ESLint** (линтер для JS/TS)
--   **Prettier** (форматирование кода)
--   **Husky** + **lint-staged** (pre-commit хуки)
--   **Hot Module Replacement (HMR)** – горячая перезагрузка модулей
+- **ESLint** (линтер для JS/TS)
+- **Prettier** (форматирование кода)
+- **Husky** + **lint-staged** (pre-commit хуки)
+- **Hot Module Replacement (HMR)** – горячая перезагрузка модулей
 
 ---
 

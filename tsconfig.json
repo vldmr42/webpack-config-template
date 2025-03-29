@@ -9,11 +9,13 @@
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
+        "skipLibCheck": true,
         "baseUrl": ".",
         "paths": {
             "@/*": ["./src/*"]
         }
     },
+    "exclude": ["node_modules/*"],
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"

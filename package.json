@@ -8,13 +8,14 @@
         "build:prod": "webpack --env mode=production",
         "build:mobile": "webpack --env mode=production --env platform=mobile",
         "build:desktop": "webpack --env mode=production --env platform=desktop",
-        "typecheck": "tsc",
+        "typecheck": "tsc --project tsconfig.json --noEmit",
         "eslint:check": "npx eslint",
         "eslint:fix": "npx eslint --fix",
         "prettier:fix": "prettier --write .",
         "prepare": "husky"
     },
     "lint-staged": {
+        "*.{ts,tsx}": "bash -c 'npm run typecheck'",
         "*.{ts,tsx,js,jsx}": "eslint --fix",
         "*": "prettier --ignore-unknown --write"
     },

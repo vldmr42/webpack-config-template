@@ -1,14 +1,14 @@
-import { Configuration } from 'webpack';
+import { Configuration } from "webpack";
 
-import { BuildOptions } from './types/types';
+import { BuildOptions } from "./types/types";
 
 export function buildResolvers(
     options: BuildOptions
-): Configuration['resolve'] {
+): Configuration["resolve"] {
     return {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: [".tsx", ".ts", ".js"],
         alias: {
-            '@': options.paths.src,
+            "@": options.paths.src,
         },
     };
 }
